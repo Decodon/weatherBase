@@ -1,0 +1,44 @@
+<div class=" ui five  stackable cards">
+
+
+<div class=" ui  red card">
+    <div class="ui green inverted segment">
+        <h1> ${_station.name} </h1>
+        <i class="large map marked alternate icon"></i>
+
+    <h1> ${_station.lat} </h1>
+    <h1> ${_station.lng} </h1>
+    </div>
+</div>
+<a class=" green card">
+    <div class="header">Weather</div>
+    <i class="${_station.weatherIcon}"> </i>
+    <h4> latest Code: ${_station.weatherIcon}</h4>
+    <h4> latest Code: ${_station.latestConditionCode}</h4>
+    <h4> latest Code: ${_station.weatherCode}</h4>
+
+</a>
+<a class=" red background card">
+    <div class="header">Temperature</div>
+    <i class="temperature high icon"></i>
+    <h4> latest Temperature: ${_station.latestConditionTemperatureC} C</h4>
+    <h4> latest Temperature: ${_station.latestConditionTemperatureF} F</h4>
+</a>
+<a class=" orange card">
+    <div class="header">Wind</div>
+    <i class="wind icon"></i>
+    <h4> latest Temperature: ${_station.latestConditionWindSpeed}</h4>
+    <h4> latest Temperature: ${_station.latestConditionWindDirection}</h4>
+    <h4> latest Code: ${_station.beaufort}</h4>
+    <h4> latest Code: ${_station.compass}</h4>
+    <h4> lFeels like: ${_station.windChill}</h4>
+
+</a>
+<a class=" purple card">
+    <div class="header">Pressure</div>
+    <i class="compress arrows alternate icon"></i>
+    <h4> latest Temperature: ${_station.latestConditionPressure}</h4>
+</a>
+</div>
+
+

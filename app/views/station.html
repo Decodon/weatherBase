@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+
+<section class="ui segment">
+    <h2 class="ui header">
+        ${station.name}
+        #{latestconditions station:station/}
+        #{listreadings station:station/}
+        #{addreading station:station/}
+        <h4> latest Temperature: ${latestCondition} </h4>
+        <h4> Max Temperature: ${maxTemperature.temperature}</h4>
+        <h4> Min Temperature: ${minTemperature.temperature}</h4>
+        <h4> latest Code: ${station.weatherCode}</h4>
+    </h2>
+</section>
