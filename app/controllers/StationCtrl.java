@@ -6,6 +6,8 @@ import models.Station;
 import models.Reading;
 import utils.StationAnalytics;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class StationCtrl extends Controller {
@@ -23,6 +25,7 @@ public class StationCtrl extends Controller {
         station.latestConditionPressure = StationAnalytics.getlatestConditionPressure(station.readings);
         station.latestConditionWindDirection = StationAnalytics.getlatestConditionWindDirection(station.readings);
         station.windChill = StationAnalytics.getWindChill(station.readings);
+
 
         if (station.latestConditionCode == 100) {
             station.weatherCode = "Clear";

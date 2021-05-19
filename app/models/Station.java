@@ -43,4 +43,8 @@ public class Station extends Model
         this.lng = lng;
     }
 
+
+    public String getName(){
+        return name;
+    }
 }

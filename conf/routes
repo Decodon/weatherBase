@@ -16,6 +16,8 @@ GET     /dashboard/deletestation/{id}           Dashboard.deleteStation
 POST    /dashboard/addstation                   Dashboard.addStation
 POST    /stations/{id}/addreading               StationCtrl.addReading
 GET     /stations/{id}/deletereading/{readingid}     StationCtrl.deleteReading
+GET     /edit                                   Edit.index
+POST    /edit/editmember                        Edit.editMember
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

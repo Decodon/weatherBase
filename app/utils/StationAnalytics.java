@@ -94,7 +94,11 @@ public class StationAnalytics {
         if (readings.size() > 0) {
             windChill = (13.12)+((0.6212)*(readings.get(readings.size() - 1).temperature) - ((11.37)*Math.pow((readings.get(readings.size() - 1).windSpeed),.016) + (0.3969)*(readings.get(readings.size() - 1).temperature)*(Math.pow((readings.get(readings.size() - 1).windSpeed),.016))));
         }
-        return windChill;
+        return toTwoDecimalPlaces(windChill);
+    }
+
+    private static double toTwoDecimalPlaces(double num){
+        return (int) (num *100 ) /100.0;
     }
 
     /*
