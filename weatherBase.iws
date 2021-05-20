@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f151a76e-b898-4464-8599-23e38358e175" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Accounts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Edit.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Edit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/StationCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/StationCtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/StationAnalytics.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/StationAnalytics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/station.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/station.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tags/latestconditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/latestconditions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tags/listreadings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/listreadings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weatherBase.iws" beforeDir="false" afterPath="$PROJECT_DIR$/weatherBase.iws" afterDir="false" />
     </list>
@@ -115,7 +105,7 @@
       <workItem from="1621454332912" duration="148000" />
       <workItem from="1621500556997" duration="3235000" />
       <workItem from="1621517778917" duration="379000" />
-      <workItem from="1621518172317" duration="4718000" />
+      <workItem from="1621518172317" duration="5232000" />
     </task>
     <servers />
   </component>
