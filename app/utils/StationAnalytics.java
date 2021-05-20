@@ -10,7 +10,7 @@ public class StationAnalytics {
     private String weatherT;
 
 
-    public static Reading getMaxTemperature(List<Reading> readings) {
+   /* public static Reading getMaxTemperature(List<Reading> readings) {
         Reading maxTemperature = null;
         if (readings.size() > 0) {
             maxTemperature = readings.get(0);
@@ -19,24 +19,44 @@ public class StationAnalytics {
                     maxTemperature = reading;
                 }
             }
+            else{
+                maxTemperature = null;
+            }
+            return maxTemperature;
         }
-        return maxTemperature;
     }
+*/
+        public static Double getMinTemperature (List < Reading > readings) {
+            Double minTemperature = null;
+            if (readings.size() > 0) {
+                minTemperature = readings.get(0).temperature;
+                for (Reading reading : readings) {
+                    if (reading.temperature < minTemperature) {
+                        minTemperature = reading.temperature;
+                    }
+                }
+            }
+            else{
+                minTemperature = 0.00;
+            }
+            return minTemperature;
+        }
 
-    public static Reading getMinTemperature(List<Reading> readings) {
-        Reading minTemperature = null;
+    public static Double getMaxTemperature (List < Reading > readings) {
+        Double maxTemperature = null;
         if (readings.size() > 0) {
-            minTemperature = readings.get(0);
+            maxTemperature = readings.get(0).temperature;
             for (Reading reading : readings) {
-                if (reading.temperature < minTemperature.temperature) {
-                    minTemperature = reading;
+                if (reading.temperature > maxTemperature) {
+                    maxTemperature = reading.temperature;
                 }
             }
         }
-        return minTemperature;
+        else{
+            maxTemperature = 0.00;
+        }
+        return maxTemperature;
     }
-
-
 
 
 
@@ -44,7 +64,10 @@ public class StationAnalytics {
         Double latestConditionTemperatureC = null;
         if (readings.size() > 0) {
             latestConditionTemperatureC = readings.get(readings.size() - 1).temperature;
+        } else {
+            latestConditionTemperatureC = 0.00;
         }
+
         return latestConditionTemperatureC;
     }
 
@@ -52,7 +75,10 @@ public class StationAnalytics {
         Double latestConditionTemperatureF = null;
         if (readings.size() > 0) {
             latestConditionTemperatureF = (((readings.get(readings.size() - 1).temperature) * (9) / 5) + 32);
+        } else {
+            latestConditionTemperatureF = 0.00;
         }
+
         return latestConditionTemperatureF;
     }
 
@@ -60,6 +86,8 @@ public class StationAnalytics {
         Integer latestConditionCode = null;
         if (readings.size() > 0) {
             latestConditionCode = readings.get(readings.size() - 1).code;
+        } else {
+            latestConditionCode = 0;
         }
         return latestConditionCode;
     }
@@ -68,6 +96,8 @@ public class StationAnalytics {
         Double latestConditionWindSpeed = null;
         if (readings.size() > 0) {
             latestConditionWindSpeed = readings.get(readings.size() - 1).windSpeed;
+        } else {
+            latestConditionWindSpeed = 0.00;
         }
         return latestConditionWindSpeed;
     }
@@ -77,6 +107,8 @@ public class StationAnalytics {
         Double latestConditionPressure = null;
         if (readings.size() > 0) {
             latestConditionPressure = readings.get(readings.size() - 1).pressure;
+        } else {
+            latestConditionPressure = 0.00;
         }
         return latestConditionPressure;
     }
@@ -85,6 +117,8 @@ public class StationAnalytics {
         Double latestConditionWindDirection = null;
         if (readings.size() > 0) {
             latestConditionWindDirection = readings.get(readings.size() - 1).windDirection;
+        } else {
+            latestConditionWindDirection = 0.00;
         }
         return latestConditionWindDirection;
     }
@@ -92,13 +126,15 @@ public class StationAnalytics {
     public static Double getWindChill(List<Reading> readings) {
         Double windChill = null;
         if (readings.size() > 0) {
-            windChill = (13.12)+((0.6212)*(readings.get(readings.size() - 1).temperature) - ((11.37)*Math.pow((readings.get(readings.size() - 1).windSpeed),.016) + (0.3969)*(readings.get(readings.size() - 1).temperature)*(Math.pow((readings.get(readings.size() - 1).windSpeed),.016))));
+            windChill = (13.12) + ((0.6212) * (readings.get(readings.size() - 1).temperature) - (11.37) * Math.pow((readings.get(readings.size() - 1).windSpeed), .016) + (0.3969) * (readings.get(readings.size() - 1).temperature) * (Math.pow((readings.get(readings.size() - 1).windSpeed), .016)));
+        } else {
+            windChill = 0.00;
         }
         return toTwoDecimalPlaces(windChill);
     }
 
-    private static double toTwoDecimalPlaces(double num){
-        return (int) (num *100 ) /100.0;
+    public static double toTwoDecimalPlaces(double num) {
+        return (int) (num * 100) / 100.0;
     }
 
     /*

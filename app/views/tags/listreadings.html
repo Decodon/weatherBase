@@ -10,6 +10,7 @@
     </tr>
     </thead>
     <tbody>
+    #{if _station.readings.size() > 0}
     #{list items:_station.readings, as:'reading'}
     <tr>
         <td>
@@ -32,5 +33,6 @@
         </td>
     </tr>
     #{/list}
+    #{/if}
     </tbody>
 </table>

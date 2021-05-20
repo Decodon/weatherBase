@@ -18,7 +18,8 @@ public class Edit extends Controller
     }
 
     public static void editMember(Long id, String firstname, String lastname, String email, String password) {
-       new Member(firstname,lastname,email,password);
+        Member member = new Member(firstname, lastname, email, password);
+        member.save();
         redirect("/dashboard");
     }
 }

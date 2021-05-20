@@ -4,7 +4,7 @@
 <div class=" ui  red card">
     <div class="ui green inverted segment">
         <h1> ${_station.name} </h1>
-        <i class="large map marked alternate icon"></i>
+        <i class="big map marked alternate icon"></i>
 
     <h1> ${_station.lat} </h1>
     <h1> ${_station.lng} </h1>
@@ -13,7 +13,8 @@
 <a class=" green card">
     <div class="header">Weather</div>
     <i class="${_station.weatherIcon}"> </i>
-    <h4> latest Code: ${_station.weatherIcon}</h4>
+    <i class="${weatherIcon}"></i>
+
     <h4> latest Code: ${_station.latestConditionCode}</h4>
     <h4> latest Code: ${_station.weatherCode}</h4>
 
@@ -23,6 +24,8 @@
     <i class="temperature high icon"></i>
     <h4> latest Temperature: ${_station.latestConditionTemperatureC} C</h4>
     <h4> latest Temperature: ${_station.latestConditionTemperatureF} F</h4>
+    <h4> Min Temperature: ${_station.minTemperature} C</h4>
+    <h4> Max Temperature: ${_station.maxTemperature} C</h4>
 </a>
 <a class=" orange card">
     <div class="header">Wind</div>

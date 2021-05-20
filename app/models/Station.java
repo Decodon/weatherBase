@@ -31,6 +31,8 @@ public class Station extends Model
     public String compass;
     public double windChill;
     public String weatherIcon;
+    public double minTemperature;
+    public double maxTemperature;
 
 
     //public Object lastestConditions;

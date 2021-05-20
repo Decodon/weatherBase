@@ -16,8 +16,8 @@ public class StationCtrl extends Controller {
     public static void index(Long id) {
         Station station = Station.findById(id);
         Logger.info("Station id = " + id);
-        Reading maxTemperature = StationAnalytics.getMaxTemperature(station.readings);
-        Reading minTemperature = StationAnalytics.getMinTemperature(station.readings);
+        //Reading maxTemperature = StationAnalytics.getMaxTemperature(station.readings);
+       // Reading minTemperature = StationAnalytics.getMinTemperature(station.readings);
         station.latestConditionTemperatureC = StationAnalytics.getlatestConditionTemperatureC(station.readings);
         station.latestConditionTemperatureF = StationAnalytics.getlatestConditionTemperatureF(station.readings);
         station.latestConditionCode = StationAnalytics.getlatestConditionCode(station.readings);
@@ -25,6 +25,8 @@ public class StationCtrl extends Controller {
         station.latestConditionPressure = StationAnalytics.getlatestConditionPressure(station.readings);
         station.latestConditionWindDirection = StationAnalytics.getlatestConditionWindDirection(station.readings);
         station.windChill = StationAnalytics.getWindChill(station.readings);
+        station.minTemperature = StationAnalytics.getMinTemperature(station.readings);
+        station.maxTemperature = StationAnalytics.getMaxTemperature(station.readings);
 
 
         if (station.latestConditionCode == 100) {
@@ -132,7 +134,8 @@ public class StationCtrl extends Controller {
 
         //Reading latestConditions = StationAnalytics.getlatestConditions(station);
 
-        render("station.html", "tags/latestconditions.html", station, maxTemperature, minTemperature);
+        render("station.html", "tags/latestconditions.html", station);
+                //maxTemperature, minTemperature);
     }
 
     public static void deleteReading(Long id, Long readingid) {
@@ -140,8 +143,8 @@ public class StationCtrl extends Controller {
         Reading reading = Reading.findById(readingid);
         Logger.info("Removing " + reading.code);
         station.readings.remove(reading);
-        Reading maxTemperature = StationAnalytics.getMaxTemperature(station.readings);
-        Reading minTemperature = StationAnalytics.getMinTemperature(station.readings);
+        //Reading maxTemperature = StationAnalytics.getMaxTemperature(station.readings);
+        //Reading minTemperature = StationAnalytics.getMinTemperature(station.readings);
         Double latestCondition = StationAnalytics.getlatestConditionTemperatureC(station.readings);
         station.latestConditionTemperatureC = StationAnalytics.getlatestConditionTemperatureC(station.readings);
         station.latestConditionTemperatureF = StationAnalytics.getlatestConditionTemperatureF(station.readings);
@@ -255,7 +258,7 @@ public class StationCtrl extends Controller {
         station.save();
         reading.delete();
 
-        render("station.html", "latestconditions.html", station, maxTemperature, minTemperature, latestCondition);
+        render("station.html", "latestconditions.html", station,  latestCondition);
     }
 
     public static void addReading(Long id, int code, double temperature, double windSpeed, double pressure, double windDirection) {
