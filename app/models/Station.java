@@ -33,6 +33,13 @@ public class Station extends Model
     public String weatherIcon;
     public double minTemperature;
     public double maxTemperature;
+    public double minWindSpeed;
+    public double maxWindSpeed;
+    public double minPressure;
+    public double maxPressure;
+    public String temperatureTrends;
+    public String windSpeedTrends;
+    public String pressureTrends;
 
 
     //public Object lastestConditions;

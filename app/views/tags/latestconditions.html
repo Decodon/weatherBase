@@ -1,47 +1,65 @@
 <div class=" ui five  stackable cards">
 
 
-<div class=" ui  red card">
-    <div class="ui green inverted segment">
-        <h1> ${_station.name} </h1>
-        <i class="big map marked alternate icon"></i>
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3> ${_station.name} <i class=" map marked alternate icon"></i></h3>
+        </div>
+        <img class="ui image" src="/public/images/SeaThree.JPG">
+        <h1> ${_station.lat} </h1>
+        <h1> ${_station.lng} </h1>
+    </a>
 
-    <h1> ${_station.lat} </h1>
-    <h1> ${_station.lng} </h1>
-    </div>
-</div>
-<a class=" green card">
-    <div class="header">Weather</div>
-    <i class="${_station.weatherIcon}"> </i>
-    <i class="${weatherIcon}"></i>
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Weather <i class="${_station.weatherIcon}"></i></h3>
+        </div>
+        <img class="ui bottom image" src="/public/images/DarkSea.JPG">
+        <h4> latest Code: ${_station.latestConditionCode}</h4>
+        <h4> latest Code: ${_station.weatherCode}</h4>
+    </a>
 
-    <h4> latest Code: ${_station.latestConditionCode}</h4>
-    <h4> latest Code: ${_station.weatherCode}</h4>
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Temperature
+                <i class="temperature high icon"></i>
+                <i class="${_station.temperatureTrends}"></i>
+            </h3>
+        </div>
+        <img class="ui bottom image" src="/public/images/SeaTwo.JPG">
+        <h4> latest Temperature: ${_station.latestConditionTemperatureC} C</h4>
+        <h4> latest Temperature: ${_station.latestConditionTemperatureF} F</h4>
+        <h4> Min Temperature: ${_station.minTemperature} C</h4>
+        <h4> Max Temperature: ${_station.maxTemperature} C</h4>
+    </a>
 
-</a>
-<a class=" red background card">
-    <div class="header">Temperature</div>
-    <i class="temperature high icon"></i>
-    <h4> latest Temperature: ${_station.latestConditionTemperatureC} C</h4>
-    <h4> latest Temperature: ${_station.latestConditionTemperatureF} F</h4>
-    <h4> Min Temperature: ${_station.minTemperature} C</h4>
-    <h4> Max Temperature: ${_station.maxTemperature} C</h4>
-</a>
-<a class=" orange card">
-    <div class="header">Wind</div>
-    <i class="wind icon"></i>
-    <h4> latest Temperature: ${_station.latestConditionWindSpeed}</h4>
-    <h4> latest Temperature: ${_station.latestConditionWindDirection}</h4>
-    <h4> latest Code: ${_station.beaufort}</h4>
-    <h4> latest Code: ${_station.compass}</h4>
-    <h4> lFeels like: ${_station.windChill}</h4>
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Wind
+                <i class="wind icon"></i>
+                <i class="${_station.windSpeedTrends}"></i>
+            </h3>
+        </div>
+        <h4> latest Wind Speed: ${_station.latestConditionWindSpeed}</h4>
+        <h4> latest Wind Direction: ${_station.latestConditionWindDirection}</h4>
+        <h4> latest Beaufort: ${_station.beaufort}</h4>
+        <h4> latest Direction: ${_station.compass}°</h4>
+        <h4> Feels like: ${_station.windChill}</h4>
+        <h4> Min Wind Speed: ${_station.minWindSpeed} C</h4>
+        <h4> Max Wind Speed: ${_station.maxWindSpeed} C</h4>
+    </a>
 
-</a>
-<a class=" purple card">
-    <div class="header">Pressure</div>
-    <i class="compress arrows alternate icon"></i>
-    <h4> latest Temperature: ${_station.latestConditionPressure}</h4>
-</a>
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Pressure
+                <i class="compress arrows alternate icon"></i>
+                <i class="${_station.pressureTrends}"></i>
+            </h3>
+        </div>
+        <h4> latest Pressure: ${_station.latestConditionPressure}</h4>
+        <h4> min Pressure: ${_station.minPressure}</h4>
+        <h4> max Pressure: ${_station.maxPressure}</h4>
+    </a>
 </div>
 
 

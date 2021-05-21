@@ -17,8 +17,8 @@ public class Dashboard extends Controller {
         Member member = Accounts.getLoggedInMember();
         List<Station> stations = member.stations;
         //List<Station> stations = Station.findAll();
-        Collections.sort(stations, Comparator.comparing(Station::getName, String.CASE_INSENSITIVE_ORDER));
-        render("dashboard.html", "/latestconditions.html" ,stations);
+        Collections.sort(stations, Comparator.comparing(Station::getName));
+        render("dashboard.html", member ,stations);
     }
 
     public static void deleteStation(Long id) {

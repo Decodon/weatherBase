@@ -4,6 +4,7 @@ Reading(r1):
   windSpeed: 3.5
   windDirection: 220
   pressure: 1001
+  date: Sat May 15 13:56:07 IST 2021
 
 Reading(r2):
   code: 600
@@ -11,6 +12,7 @@ Reading(r2):
   windSpeed: 2
   windDirection: 200
   pressure: 1004
+  date: Sun May 16 18:54:31 IST 2021
 
 Reading(r3):
   code: 700
@@ -18,6 +20,7 @@ Reading(r3):
   windSpeed: 1
   windDirection: 90
   pressure: 1000
+  date: Mon May 17 00:23:01 IST 2021
 
 Reading(r4):
   code: 200
@@ -25,6 +28,47 @@ Reading(r4):
   windSpeed: 3.5
   windDirection: 120
   pressure: 999
+  date: Tue May 18 00:23:01 IST 2021
+
+Reading(r5):
+  code: 400
+  temperature: 10.0
+  windSpeed: 6.5
+  windDirection: 350
+  pressure: 1004
+  date: Wed May 19 09:23:11 IST 2021
+
+Reading(r6):
+  code: 100
+  temperature: 20.0
+  windSpeed: 4.3
+  windDirection: 30
+  pressure: 1000
+  date: Thu May 20 13:25:11 IST 2021
+
+Reading(r7):
+  code: 200
+  temperature: 5.5
+  windSpeed: 1.1
+  windDirection: 170
+  pressure: 1004
+  date: Thu May 20 13:25:11 IST 2021
+
+Reading(r8):
+  code: 300
+  temperature: 17.2
+  windSpeed: 2.3
+  windDirection: 130
+  pressure: 10002
+  date: Fri May 21 19:20:01 IST 2021
+
+Reading(r9):
+  code: 600
+  temperature: 12.1
+  windSpeed: 2.1
+  windDirection: 230
+  pressure: 1003
+  date: Fri May 21 21:37:17 IST 2021
 
 Station(s1):
   name: Tramore
@@ -33,14 +77,25 @@ Station(s1):
   readings:
     - r1
     - r2
+    - r3
 
 Station(s2):
   name: Dunmore
   lat: 52.149
   lng: -6.994
   readings:
-    - r3
     - r4
+    - r5
+    - r6
+
+Station(s3):
+  name: CorkAirport
+  lat: 51.849
+  lng: 8.489
+  readings:
+    - r7
+    - r8
+    - r9
 
 Member(m1):
   email: homer@simpson.com
@@ -50,3 +105,13 @@ Member(m1):
   stations:
     - s1
     - s2
+
+
+Member(m2):
+  email: marge@simpson.com
+  password: secret
+  firstname: Marge
+  lastname: Simpson
+  stations:
+    - s3
+

@@ -1,18 +1,23 @@
 
-<table class="ui fixed table">
+<table class="ui inverted fixed table">
     <thead>
     <tr>
+        <th>Date/Time</th>
         <th>Code</th>
         <th>Temp</th>
         <th>Wind Speed</th>
         <th>Pressure</th>
         <th>Wind Direction</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     #{if _station.readings.size() > 0}
     #{list items:_station.readings, as:'reading'}
     <tr>
+        <td>
+            ${reading.date}
+        </td>
         <td>
             ${reading.code}
         </td>

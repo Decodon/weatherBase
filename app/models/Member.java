@@ -36,4 +36,8 @@ public class Member extends Model
     {
         return this.password.equals(password);
     }
+
+    public void getFirstName(String firstname){
+        this.firstname = firstname;
+    }
 }

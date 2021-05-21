@@ -6,60 +6,6 @@ import java.util.List;
 
 public class StationAnalytics {
 
-
-    private String weatherT;
-
-
-   /* public static Reading getMaxTemperature(List<Reading> readings) {
-        Reading maxTemperature = null;
-        if (readings.size() > 0) {
-            maxTemperature = readings.get(0);
-            for (Reading reading : readings) {
-                if (reading.temperature > maxTemperature.temperature) {
-                    maxTemperature = reading;
-                }
-            }
-            else{
-                maxTemperature = null;
-            }
-            return maxTemperature;
-        }
-    }
-*/
-        public static Double getMinTemperature (List < Reading > readings) {
-            Double minTemperature = null;
-            if (readings.size() > 0) {
-                minTemperature = readings.get(0).temperature;
-                for (Reading reading : readings) {
-                    if (reading.temperature < minTemperature) {
-                        minTemperature = reading.temperature;
-                    }
-                }
-            }
-            else{
-                minTemperature = 0.00;
-            }
-            return minTemperature;
-        }
-
-    public static Double getMaxTemperature (List < Reading > readings) {
-        Double maxTemperature = null;
-        if (readings.size() > 0) {
-            maxTemperature = readings.get(0).temperature;
-            for (Reading reading : readings) {
-                if (reading.temperature > maxTemperature) {
-                    maxTemperature = reading.temperature;
-                }
-            }
-        }
-        else{
-            maxTemperature = 0.00;
-        }
-        return maxTemperature;
-    }
-
-
-
     public static Double getlatestConditionTemperatureC(List<Reading> readings) {
         Double latestConditionTemperatureC = null;
         if (readings.size() > 0) {
@@ -137,32 +83,131 @@ public class StationAnalytics {
         return (int) (num * 100) / 100.0;
     }
 
-    /*
-    public static String getWeatherT(int getlatestConditionCode){
-        String weatherT = null;
-        if (StationAnalytics.getlatestConditionCode(station.readings) == 100) {
-            weatherT =  "Clear";
-            return weatherT;
-        } else if (station.latestConditionCode == 200) {
-            weatherT = "Partial Clouds";
-        } else if (station.latestConditionCode == 300) {
-            weatherT = "Cloudy";
-        } else if (station.latestConditionCode == 400) {
-            weatherT = "Light Showers";
-        } else if (station.latestConditionCode == 500) {
-            weatherT = "Heavy Showers";
-        } else if (station.latestConditionCode == 600) {
-            weatherT = "Rain";
-        } else if (station.latestConditionCode == 700) {
-            weatherT = "Snow";
-        } else if (station.latestConditionCode == 800) {
-            weatherT = "Thunder";
-        } else weatherT = "Please enter in terms of hundreds";
-
-        return weatherT;
+    public static String weatherCode(int code) {
+        switch (code) {
+            case 100:
+                return "Clear";
+            case 200:
+                return "Partial Clouds";
+            case 300:
+                return "Cloudy";
+            case 400:
+                return "Light Showers";
+            case 500:
+                return "Heavy Showers";
+            case 600:
+                return "Rain";
+            case 700:
+                return "Snow";
+            case 800:
+                return "Thunder";
+            default:
+                return "Please delete last reading and re-enter in terms of 100's (100-800)";
+        }
     }
-*/
 
+    public static String weatherIcon(int code) {
+        switch (code) {
+            case 100:
+                return "sun icon";
+            case 200:
+                return "cloud icon";
+            case 300:
+                return "cloud meatball icon";
+            case 400:
+                return "cloud sun rain icon";
+            case 500:
+                return "cloud showers heavy icon";
+            case 600:
+                return "cloud rain icon";
+            case 700:
+                return "snowflake icon";
+            case 800:
+                return "bolt icon";
+            default:
+                return "Please delete last reading and re-enter in terms of 100's (100-800)";
+        }
+    }
+
+    public static String getBeaufortScale(List<Reading> readings) {
+        if (readings.size() > 0) {
+            String beaufortScale = null;
+            if (readings.get(readings.size() - 1).windSpeed == 1) {
+                beaufortScale = "0bft - Calm";
+            } else if (readings.get(readings.size() - 1).windSpeed > 1 && readings.get(readings.size() - 1).windSpeed <= 5) {
+                beaufortScale = "1bft - Light Air ";
+            } else if (readings.get(readings.size() - 1).windSpeed > 5 && readings.get(readings.size() - 1).windSpeed <= 11) {
+                beaufortScale = "2bft - Light Breeze";
+            } else if (readings.get(readings.size() - 1).windSpeed > 12 && readings.get(readings.size() - 1).windSpeed <= 19) {
+                beaufortScale = "3bft - Gentle Breeze";
+            } else if (readings.get(readings.size() - 1).windSpeed > 19 && readings.get(readings.size() - 1).windSpeed <= 28) {
+                beaufortScale = "4bft- Moderate Breeze";
+            } else if (readings.get(readings.size() - 1).windSpeed > 28 && readings.get(readings.size() - 1).windSpeed <= 38) {
+                beaufortScale = "5bft - Fresh Breeze";
+            } else if (readings.get(readings.size() - 1).windSpeed > 38 && readings.get(readings.size() - 1).windSpeed <= 49) {
+                beaufortScale = "6bft - Strong Breeze";
+            } else if (readings.get(readings.size() - 1).windSpeed > 49 && readings.get(readings.size() - 1).windSpeed <= 61) {
+                beaufortScale = "7bft - Near Gale";
+            } else if (readings.get(readings.size() - 1).windSpeed > 61 && readings.get(readings.size() - 1).windSpeed <= 74) {
+                beaufortScale = "8bft - Gale";
+            } else if (readings.get(readings.size() - 1).windSpeed > 74 && readings.get(readings.size() - 1).windSpeed <= 88) {
+                beaufortScale = "9bft - Severe Gale";
+            } else if (readings.get(readings.size() - 1).windSpeed > 88 && readings.get(readings.size() - 1).windSpeed <= 102) {
+                beaufortScale = "10bft - Strong Storm";
+            } else if (readings.get(readings.size() - 1).windSpeed > 102 && readings.get(readings.size() - 1).windSpeed <= 117) {
+                beaufortScale = "11bft - Violent Storm";
+            } else if (readings.get(readings.size() - 1).windSpeed > 117) {
+                beaufortScale = "Off the Charts";
+            }
+            return beaufortScale;
+        }
+        return null;
+    }
+
+    public static String getCompassDirection(List<Reading> readings) {
+        if (readings.size() > 0) {
+            String compassDirection = null;
+            if (readings.get(readings.size() - 1).windDirection > 348.75 && readings.get(readings.size() - 1).windDirection <= 360) {
+                compassDirection = "N";
+            } else if (readings.get(readings.size() - 1).windDirection >= 0 && readings.get(readings.size() - 1).windDirection <= 11.25) {
+                compassDirection = "N";
+            } else if (readings.get(readings.size() - 1).windDirection > 11.25 && readings.get(readings.size() - 1).windDirection <= 33.75) {
+                compassDirection = "NNE";
+            } else if (readings.get(readings.size() - 1).windDirection > 33.75 && readings.get(readings.size() - 1).windDirection <= 56.25) {
+                compassDirection = "NE";
+            } else if (readings.get(readings.size() - 1).windDirection > 56.25 && readings.get(readings.size() - 1).windDirection <= 78.75) {
+                compassDirection = "ENE";
+            } else if (readings.get(readings.size() - 1).windDirection > 78.5 && readings.get(readings.size() - 1).windDirection <= 101.25) {
+                compassDirection = "E";
+            } else if (readings.get(readings.size() - 1).windDirection > 101.25 && readings.get(readings.size() - 1).windDirection <= 123.75) {
+                compassDirection = "ESE";
+            } else if (readings.get(readings.size() - 1).windDirection > 123.75 && readings.get(readings.size() - 1).windDirection <= 146.25) {
+                compassDirection = "SE";
+            } else if (readings.get(readings.size() - 1).windDirection > 146.25 && readings.get(readings.size() - 1).windDirection <= 168.75) {
+                compassDirection = "SSE";
+            } else if (readings.get(readings.size() - 1).windDirection > 168.75 && readings.get(readings.size() - 1).windDirection <= 191.25) {
+                compassDirection = "S";
+            } else if (readings.get(readings.size() - 1).windDirection > 191.25 && readings.get(readings.size() - 1).windDirection <= 213.75) {
+                compassDirection = "SSW";
+            } else if (readings.get(readings.size() - 1).windDirection > 213.75 && readings.get(readings.size() - 1).windDirection <= 236.25) {
+                compassDirection = "SW";
+            } else if (readings.get(readings.size() - 1).windDirection > 236.25 && readings.get(readings.size() - 1).windDirection <= 258.75) {
+                compassDirection = "WSW";
+            } else if (readings.get(readings.size() - 1).windDirection > 258.75 && readings.get(readings.size() - 1).windDirection <= 281.25) {
+                compassDirection = "W";
+            } else if (readings.get(readings.size() - 1).windDirection > 281.25 && readings.get(readings.size() - 1).windDirection <= 303.75) {
+                compassDirection = "WNW";
+            } else if (readings.get(readings.size() - 1).windDirection > 303.75 && readings.get(readings.size() - 1).windDirection <= 326.25) {
+                compassDirection = "NW";
+            } else if (readings.get(readings.size() - 1).windDirection > 326.25 && readings.get(readings.size() - 1).windDirection <= 348.75) {
+                compassDirection = "NNW";
+            } else if (readings.get(readings.size() - 1).windDirection > 360.0) {
+                compassDirection = "Degrees 0-360 please";
+            }
+            return compassDirection;
+        }
+        return null;
+    }
 }
 /*
     HashMap<Integer,String> weatherCodes = new HashMap<Integer, String>();
