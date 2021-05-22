@@ -10,15 +10,43 @@ import models.Station;
 import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
+import utils.MaxMin;
+import utils.StationAnalytics;
+import utils.Trends;
 
 public class Dashboard extends Controller {
     public static void index() {
         Logger.info("Rendering Dashboard");
         Member member = Accounts.getLoggedInMember();
         List<Station> stations = member.stations;
-        //List<Station> stations = Station.findAll();
-        Collections.sort(stations, Comparator.comparing(Station::getName));
-        render("dashboard.html", member ,stations);
+        Collections.sort(stations, Comparator.comparing(Station::getName, String.CASE_INSENSITIVE_ORDER));
+        for (Station station: stations) {
+            station.latestConditionTemperatureC= StationAnalytics.getlatestConditionTemperatureC(station.readings);
+            station.latestConditionTemperatureF = StationAnalytics.getlatestConditionTemperatureF(station.readings);
+            station.latestConditionCode = StationAnalytics.getlatestConditionCode(station.readings);
+            station.latestConditionWindSpeed = StationAnalytics.getlatestConditionWindSpeed(station.readings);
+            station.latestConditionPressure = StationAnalytics.getlatestConditionPressure(station.readings);
+            station.latestConditionWindDirection = StationAnalytics.getlatestConditionWindDirection(station.readings);
+
+            station.minTemperature = MaxMin.getMinTemperature(station.readings);
+            station.maxTemperature = MaxMin.getMaxTemperature(station.readings);
+            station.minWindSpeed = MaxMin.getMinWindSpeed(station.readings);
+            station.maxWindSpeed = MaxMin.getMaxWindSpeed(station.readings);
+            station.minPressure = MaxMin.getMinPressure(station.readings);
+            station.maxPressure = MaxMin.getMaxPressure(station.readings);
+
+            station.temperatureTrends = Trends.getTemperatureTrends(station.readings);
+            station.windSpeedTrends = Trends.getWindSpeedTrends(station.readings);
+            station.pressureTrends = Trends.getPressureTrends(station.readings);
+
+            station.weatherCode = StationAnalytics.weatherCode(station.latestConditionCode);
+            station.weatherIcon = StationAnalytics.weatherIcon(station.latestConditionCode);
+            station.beaufort = StationAnalytics.getBeaufortScale(station.readings);
+            station.compass = StationAnalytics.getCompassDirection(station.readings);
+            station.windChill = StationAnalytics.getWindChill(station.readings);
+        }
+
+        render("dashboard.html", member ,stations, "/tags/latestconditions.html");
     }
 
     public static void deleteStation(Long id) {

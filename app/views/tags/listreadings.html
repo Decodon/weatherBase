@@ -1,14 +1,14 @@
-
 <table class="ui inverted fixed table">
     <thead>
     <tr>
-        <th>Date/Time</th>
-        <th>Code</th>
-        <th>Temp</th>
-        <th>Wind Speed</th>
-        <th>Pressure</th>
-        <th>Wind Direction</th>
-        <th>Delete</th>
+        <th><h3>Date/Time</h3></th>
+        <th><h3>Code</h3></th>
+        <th><h3>Temp</h3></th>
+        <th><h3>Wind Speed</h3></th>
+        <th><h3>Pressure</h3></th>
+        <th><h3>Wind Direction</h3></th>
+        <th><h3>Delete</h3></th>
+        </h3>
     </tr>
     </thead>
     <tbody>
@@ -16,22 +16,34 @@
     #{list items:_station.readings, as:'reading'}
     <tr>
         <td>
-            ${reading.date}
+            <h5>
+                ${reading.date}
+            </h5>
         </td>
         <td>
-            ${reading.code}
+            <h5>
+                ${reading.code}
+            </h5>
         </td>
         <td>
-            ${reading.temperature}
+            <h5>
+                ${reading.temperature}
+            </h5>
         </td>
         <td>
-            ${reading.windSpeed}
+            <h5>
+                ${reading.windSpeed}
+            </h5>
         </td>
         <td>
-            ${reading.pressure}
+            <h5>
+                ${reading.pressure}
+            </h5>
         </td>
         <td>
-            ${reading.windDirection}
+            <h5>
+                ${reading.windDirection}
+            </h5>
         </td>
         <td>
             <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui tiny red button">Delete Reading</a>

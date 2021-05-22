@@ -2,6 +2,7 @@ package utils;
 
 import models.Reading;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class StationAnalytics {
@@ -72,7 +73,7 @@ public class StationAnalytics {
     public static Double getWindChill(List<Reading> readings) {
         Double windChill = null;
         if (readings.size() > 0) {
-            windChill = (13.12) + ((0.6212) * (readings.get(readings.size() - 1).temperature) - (11.37) * Math.pow((readings.get(readings.size() - 1).windSpeed), .016) + (0.3969) * (readings.get(readings.size() - 1).temperature) * (Math.pow((readings.get(readings.size() - 1).windSpeed), .016)));
+            windChill = (13.12) + ((0.6212) * (readings.get(readings.size() - 1).temperature) - (11.37) * Math.pow((readings.get(readings.size() - 1).windSpeed), 0.16) + (0.3965) * (readings.get(readings.size() - 1).temperature) * (Math.pow((readings.get(readings.size() - 1).windSpeed), 0.16)));
         } else {
             windChill = 0.00;
         }
@@ -128,6 +129,20 @@ public class StationAnalytics {
                 return "Please delete last reading and re-enter in terms of 100's (100-800)";
         }
     }
+
+   /* private static String getWeatherCode(int code) {
+        HashMap<Integer, String> weatherCodes = new HashMap<Integer, String>();
+        weatherCodes.put(100, "Clear");
+        weatherCodes.put(200, "Partial Clouds");
+        weatherCodes.put(300, "Cloudy");
+        weatherCodes.put(400, "Light Showers");
+        weatherCodes.put(500, "Heavy Showers");
+        weatherCodes.put(600, "Rain");
+        weatherCodes.put(700, "Snow");
+        weatherCodes.put(800, "Thunder");
+        return weatherCodes.get(code);
+    }
+    */
 
     public static String getBeaufortScale(List<Reading> readings) {
         if (readings.size() > 0) {
@@ -209,20 +224,8 @@ public class StationAnalytics {
         return null;
     }
 }
-/*
-    HashMap<Integer,String> weatherCodes = new HashMap<Integer, String>();
 
-    private void fillWeatherCodes(){
-        this.weatherCodes.put(100, "Clear");
-        this.weatherCodes.put(200, "Partial Clouds");
-        this.weatherCodes.put(300, "Cloudy");
-        this.weatherCodes.put(400, "Light Showers");
-        this.weatherCodes.put(500, "Heavy Showers");
-        this.weatherCodes.put(600, "Rain");
-        this.weatherCodes.put(700, "Snow");
-        this.weatherCodes.put(800, "Thunder");
-    }
-*/
+
 
 
 

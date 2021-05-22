@@ -5,7 +5,7 @@ import models.Reading;
 import java.util.List;
 
 public class MaxMin {
-    public static Double getMinTemperature (List < Reading > readings) {
+    public static Double getMinTemperature(List<Reading> readings) {
         Double minTemperature = null;
         if (readings.size() > 0) {
             minTemperature = readings.get(0).temperature;
@@ -14,14 +14,13 @@ public class MaxMin {
                     minTemperature = reading.temperature;
                 }
             }
-        }
-        else{
+        } else {
             minTemperature = 0.00;
         }
         return minTemperature;
     }
 
-    public static Double getMaxTemperature (List < Reading > readings) {
+    public static Double getMaxTemperature(List<Reading> readings) {
         Double maxTemperature = null;
         if (readings.size() > 0) {
             maxTemperature = readings.get(0).temperature;
@@ -30,14 +29,13 @@ public class MaxMin {
                     maxTemperature = reading.temperature;
                 }
             }
-        }
-        else{
+        } else {
             maxTemperature = 0.00;
         }
         return maxTemperature;
     }
 
-    public static Double getMinWindSpeed (List < Reading > readings) {
+    public static Double getMinWindSpeed(List<Reading> readings) {
         Double minWindSpeed = null;
         if (readings.size() > 0) {
             minWindSpeed = readings.get(0).windSpeed;
@@ -46,14 +44,13 @@ public class MaxMin {
                     minWindSpeed = reading.windSpeed;
                 }
             }
-        }
-        else{
+        } else {
             minWindSpeed = 0.00;
         }
         return minWindSpeed;
     }
 
-    public static Double getMaxWindSpeed (List < Reading > readings) {
+    public static Double getMaxWindSpeed(List<Reading> readings) {
         Double maxWindSpeed = null;
         if (readings.size() > 0) {
             maxWindSpeed = readings.get(0).windSpeed;
@@ -62,14 +59,13 @@ public class MaxMin {
                     maxWindSpeed = reading.windSpeed;
                 }
             }
-        }
-        else{
+        } else {
             maxWindSpeed = 0.00;
         }
         return maxWindSpeed;
     }
 
-    public static Double getMinPressure (List < Reading > readings) {
+    public static Double getMinPressure(List<Reading> readings) {
         Double minPressure = null;
         if (readings.size() > 0) {
             minPressure = readings.get(0).pressure;
@@ -78,24 +74,22 @@ public class MaxMin {
                     minPressure = reading.pressure;
                 }
             }
-        }
-        else{
+        } else {
             minPressure = 0.00;
         }
         return minPressure;
     }
 
-    public static Double getMaxPressure (List < Reading > readings) {
+    public static Double getMaxPressure(List<Reading> readings) {
         Double maxPressure = null;
         if (readings.size() > 0) {
             maxPressure = readings.get(0).pressure;
             for (Reading reading : readings) {
                 if (reading.pressure > maxPressure) {
-                    maxPressure = reading.temperature;
+                    maxPressure = reading.pressure;
                 }
             }
-        }
-        else{
+        } else {
             maxPressure = 0.00;
         }
         return maxPressure;

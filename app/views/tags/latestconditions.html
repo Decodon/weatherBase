@@ -1,64 +1,66 @@
-<div class=" ui five  stackable cards">
-
-
+<div class=" ui five stackable cards">
     <a class=" ui red card">
         <div class="ui inverted segment">
-            <h3> ${_station.name} <i class=" map marked alternate icon"></i></h3>
+            <h3> ${_station.name} <i class=" right floated large map marked alternate icon"></i></h3>
         </div>
-        <img class="ui image" src="/public/images/SeaThree.JPG">
-        <h1> ${_station.lat} </h1>
-        <h1> ${_station.lng} </h1>
+        <span class="ui black text">
+        <h2>Lat: ${_station.lat} </h2>
+        <h2>Lng: ${_station.lng} </h2>
+        </span>
+    </a>
+
+    <a class=" ui red card">
+        <div class="ui inverted black segment">
+            <h3 class="header">Weather <i class="right floated large ${_station.weatherIcon}"></i></h3>
+        </div>
+        <span class="ui black text">
+        <h2> ${_station.weatherCode}</h2>
+        </span>
     </a>
 
     <a class=" ui red card">
         <div class="ui inverted segment">
-            <h3 class="header">Weather <i class="${_station.weatherIcon}"></i></h3>
-        </div>
-        <img class="ui bottom image" src="/public/images/DarkSea.JPG">
-        <h4> latest Code: ${_station.latestConditionCode}</h4>
-        <h4> latest Code: ${_station.weatherCode}</h4>
-    </a>
-
-    <a class=" ui red card">
-        <div class="ui inverted segment">
-            <h3 class="header">Temperature
-                <i class="temperature high icon"></i>
-                <i class="${_station.temperatureTrends}"></i>
+            <h3 class="header">Temp
+                <i class="right floated large ${_station.temperatureTrends}"></i>
+                <i class="right floated large temperature high icon"></i>
             </h3>
         </div>
-        <img class="ui bottom image" src="/public/images/SeaTwo.JPG">
-        <h4> latest Temperature: ${_station.latestConditionTemperatureC} C</h4>
-        <h4> latest Temperature: ${_station.latestConditionTemperatureF} F</h4>
-        <h4> Min Temperature: ${_station.minTemperature} C</h4>
-        <h4> Max Temperature: ${_station.maxTemperature} C</h4>
+        <span class="ui black text">
+        <h4>${_station.latestConditionTemperatureC}°C</h4>
+        <h4>${_station.latestConditionTemperatureF}°F</h4>
+        <h4>Min: ${_station.minTemperature}°C</h4>
+        <h4>Max: ${_station.maxTemperature}°C</h4>
+        </span>
     </a>
 
     <a class=" ui red card">
         <div class="ui inverted segment">
             <h3 class="header">Wind
-                <i class="wind icon"></i>
-                <i class="${_station.windSpeedTrends}"></i>
+                <i class="right floated large ${_station.windSpeedTrends}"></i>
+                <i class="right floated large wind icon"></i>
             </h3>
         </div>
-        <h4> latest Wind Speed: ${_station.latestConditionWindSpeed}</h4>
-        <h4> latest Wind Direction: ${_station.latestConditionWindDirection}</h4>
+        <span class="ui black text">
         <h4> latest Beaufort: ${_station.beaufort}</h4>
-        <h4> latest Direction: ${_station.compass}°</h4>
+        <h4> latest Direction: ${_station.compass}</h4>
         <h4> Feels like: ${_station.windChill}</h4>
-        <h4> Min Wind Speed: ${_station.minWindSpeed} C</h4>
-        <h4> Max Wind Speed: ${_station.maxWindSpeed} C</h4>
+        <h4> Min: ${_station.minWindSpeed} C</h4>
+        <h4> Max: ${_station.maxWindSpeed}</h4>
+        </span>
     </a>
 
     <a class=" ui red card">
         <div class="ui inverted segment">
             <h3 class="header">Pressure
-                <i class="compress arrows alternate icon"></i>
-                <i class="${_station.pressureTrends}"></i>
+                <i class="right floated large ${_station.pressureTrends}"></i>
+                <i class="right floated large compress arrows alternate icon"></i>
             </h3>
         </div>
-        <h4> latest Pressure: ${_station.latestConditionPressure}</h4>
-        <h4> min Pressure: ${_station.minPressure}</h4>
-        <h4> max Pressure: ${_station.maxPressure}</h4>
+        <span class="ui black text">
+        <h4> latest Pressure: ${_station.latestConditionPressure} hPa</h4>
+        <h4> Min: ${_station.minPressure} hPa</h4>
+        <h4> Max Pressure: ${_station.maxPressure}</h4>
+        </span>
     </a>
 </div>
 

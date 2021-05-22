@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f151a76e-b898-4464-8599-23e38358e175" name="Default Changelist" comment="" />
+    <list default="true" id="f151a76e-b898-4464-8599-23e38358e175" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/controllers/About.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/About.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Accounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Edit.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Edit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/MaxMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/MaxMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/StationAnalytics.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/StationAnalytics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/addreading.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/addreading.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/addstation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/addstation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/latestconditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/latestconditions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/listreadings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/listreadings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/mainpanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/mainpanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/welcomemenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/welcomemenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weatherBase.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/weatherBase.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weatherBase.iws" beforeDir="false" afterPath="$PROJECT_DIR$/weatherBase.iws" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,19 +75,6 @@
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/conf" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -119,7 +133,10 @@
       <workItem from="1621500556997" duration="3235000" />
       <workItem from="1621517778917" duration="379000" />
       <workItem from="1621518172317" duration="8870000" />
-      <workItem from="1621592910475" duration="17618000" />
+      <workItem from="1621592910475" duration="18068000" />
+      <workItem from="1621618709692" duration="2343000" />
+      <workItem from="1621630970119" duration="3453000" />
+      <workItem from="1621674508614" duration="11505000" />
     </task>
     <servers />
   </component>

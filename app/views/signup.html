@@ -2,9 +2,31 @@
 #{set title:'Signup' /}
 #{welcomemenu id:"signup"/}
 
+<script>
+    function validateForm() {
+        var a = document.forms["signup"]["firstname"].value;
+        var b = document.forms["signup"]["lastname"].value;
+        var c = document.forms["signup"]["firstname"].value;
+        var d = document.forms["signup"]["lastname"].value;
+
+        if (a == "" || b =="" || c=="" || d =="") {
+            alert("Please fill out all boxes");
+            return false;
+        }
+    }
+</script>
+
+<section>
+    <div class="ui centered huge header">Welcome to Weather Top</div>
+    <div class="ui centered small header">
+        Thank you for choosing to register for Weather Top
+        <br>
+        Please enter your details below to register
+    </div>
+</section>
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/register" method="POST">
+        <form class="ui stacked segment form" name="signup" onsubmit="return validateForm()" action="/register" method="POST">
             <h3 class="ui header">Register</h3>
             <div class="two fields">
                 <div class="field">
@@ -24,10 +46,10 @@
                 <label>Password</label>
                 <input type="password" name="password">
             </div>
-            <button class="ui blue submit button">Submit</button>
+            <button class="ui black submit button">Submit</button>
         </form>
     </div>
     <div class="column">
-        <img class="ui image" src="/public/images/SunSea.JPG">
+        <img class="big ui image" src="/public/images/SunSea.JPG">
     </div>
 </div>

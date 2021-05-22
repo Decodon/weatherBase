@@ -1,17 +1,68 @@
-<form class="ui stacked segment form" action="/dashboard/addstation" method="POST">
-    <div class="two fields">
-        <div class="field">
-            <label>Name</label>
-            <input placeholder="Name" type="text" name="name">
+<div class="ui segment">
+    <form class="ui stacked segment inverted form" name="addStation" action="/dashboard/addstation" method="POST">
+        <div class="equal width fields">
+            <div class="field">
+                <label>Name</label>
+                <input placeholder="Name" type="text" name="name">
+            </div>
+            <div class="field">
+                <label>Latitude</label>
+                <input placeholder="latitude" type="number" name="lat">
+            </div>
+            <div class="field">
+                <label>Name</label>
+                <input placeholder="Name" type="number" name="lng">
+            </div>
         </div>
-        <div class="field">
-            <label>Latitude</label>
-            <input placeholder="latitude" type="double" name="lat">
+        <button class="ui white submit button">Add Station</button>
+        <div class="ui error message">
         </div>
-        <div class="field">
-            <label>Name</label>
-            <input placeholder="Name" type="double" name="lng">
-        </div>
-    </div>
-    <button class="ui blue submit button">Add Station</button>
+    </form>
+</div>
+<p>
+    <script>
+        $('form.ui.form')
+            .form({
+                on: 'blur',
+                fields: {
+                    name: {
+                        identifier: 'name',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Please enter the Station name'
+                            }
+                        ]
+                    },
+                    lat: {
+                        identifier: 'lat',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Please enter the latitude'
+                            },
+                            {
+                                type: 'decimal',
+                                prompt: 'Please enter a valid latitude'
+                            }
+                        ]
+                    },
+                    lng: {
+                        identifier: 'lng',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Please enter the longitude'
+                            },
+                            {
+                                type: 'decimal',
+                                prompt: 'Please enter a valid longitude'
+                            }
+                        ]
+                    }
+                }
+            });
+    </script>
+</p>
 </form>
+

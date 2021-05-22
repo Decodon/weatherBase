@@ -12,8 +12,7 @@ import play.db.jpa.Model;
 import utils.StationAnalytics;
 
 @Entity
-public class Station extends Model
-{
+public class Station extends Model {
     public String name;
     public double lat;
     public double lng;
@@ -41,19 +40,13 @@ public class Station extends Model
     public String windSpeedTrends;
     public String pressureTrends;
 
-
-    //public Object lastestConditions;
-
-
-    public Station (String name, double lat, double lng)
-    {
+    public Station(String name, double lat, double lng) {
         this.name = name;
         this.lat = lat;
         this.lng = lng;
     }
 
-
-    public String getName(){
+    public String getName() {
         return name;
     }
 }
