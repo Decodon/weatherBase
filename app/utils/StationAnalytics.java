@@ -83,7 +83,7 @@ public class StationAnalytics {
     public static double toTwoDecimalPlaces(double num) {
         return (int) (num * 100) / 100.0;
     }
-/*
+
     public static String weatherCode(int code) {
         switch (code) {
             case 100:
@@ -106,40 +106,41 @@ public class StationAnalytics {
                 return "Please delete last reading and re-enter in terms of 100's (100-800)";
         }
     }
-*/
-    public static String weatherIcon(int code) {
-        switch (code) {
-            case 100:
-                return "sun icon";
-            case 200:
-                return "cloud icon";
-            case 300:
-                return "cloud meatball icon";
-            case 400:
-                return "cloud sun rain icon";
-            case 500:
-                return "cloud showers heavy icon";
-            case 600:
-                return "cloud rain icon";
-            case 700:
-                return "snowflake icon";
-            case 800:
-                return "bolt icon";
-            default:
-                return "Please delete last reading and re-enter in terms of 100's (100-800)";
-        }
-    }
 
-    public static String weatherCode(int code) {
+    /*
+        public static String weatherIcon(int code) {
+            switch (code) {
+                case 100:
+                    return "sun icon";
+                case 200:
+                    return "cloud icon";
+                case 300:
+                    return "cloud meatball icon";
+                case 400:
+                    return "cloud sun rain icon";
+                case 500:
+                    return "cloud showers heavy icon";
+                case 600:
+                    return "cloud rain icon";
+                case 700:
+                    return "snowflake icon";
+                case 800:
+                    return "bolt icon";
+                default:
+                    return "Please delete last reading and re-enter in terms of 100's (100-800)";
+            }
+        }
+    */
+    public static String weatherIcon(int code) {
         HashMap<Integer, String> weatherCodes = new HashMap<Integer, String>();
-        weatherCodes.put(100, "Clear");
-        weatherCodes.put(200, "Partial Clouds");
-        weatherCodes.put(300, "Cloudy");
-        weatherCodes.put(400, "Light Showers");
-        weatherCodes.put(500, "Heavy Showers");
-        weatherCodes.put(600, "Rain");
-        weatherCodes.put(700, "Snow");
-        weatherCodes.put(800, "Thunder");
+        weatherCodes.put(100, "sun icon");
+        weatherCodes.put(200, "cloud icon");
+        weatherCodes.put(300, "cloud meatball icon");
+        weatherCodes.put(400, "cloud sun rain icon");
+        weatherCodes.put(500, "cloud showers heavy icon");
+        weatherCodes.put(600, "cloud rain icon");
+        weatherCodes.put(700, "snowflake icon");
+        weatherCodes.put(800, "bolt icon");
         return weatherCodes.get(code);
     }
 
