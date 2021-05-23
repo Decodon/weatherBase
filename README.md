@@ -26,3 +26,10 @@ Slack weatherTop Channel
 
 For styling, boxes, forms, segments, headings etc.:
 https://fomantic-ui.com/
+
+Known Issues:
+You can add Temperature Code, Wind Speed and Compass directions that aren't on the scales. Just asks you to delete and do it again. 
+Should have implemented something for that. 
+
+Editing members, the password box doesn't hide the text.
+UPDATE - It does hide the text now. Not on video though
