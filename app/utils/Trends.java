@@ -6,6 +6,11 @@ import java.util.List;
 
 public class Trends {
 
+    /* If there are more than 2 readings, the last 3 readings are used
+    All 3 have to be going upwards or downwards to get the equivalent
+    arrows. If one reading is up and next down, or vice versa, they get
+    a straight line. Straight line also if less than 3 readings
+     */
     public static String getTemperatureTrends(List<Reading> readings) {
         String temperatureTrends = null;
         if (readings.size() > 2) {

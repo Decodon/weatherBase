@@ -83,7 +83,7 @@ public class StationAnalytics {
     public static double toTwoDecimalPlaces(double num) {
         return (int) (num * 100) / 100.0;
     }
-
+/*
     public static String weatherCode(int code) {
         switch (code) {
             case 100:
@@ -106,7 +106,7 @@ public class StationAnalytics {
                 return "Please delete last reading and re-enter in terms of 100's (100-800)";
         }
     }
-
+*/
     public static String weatherIcon(int code) {
         switch (code) {
             case 100:
@@ -130,7 +130,7 @@ public class StationAnalytics {
         }
     }
 
-   /* private static String getWeatherCode(int code) {
+    public static String weatherCode(int code) {
         HashMap<Integer, String> weatherCodes = new HashMap<Integer, String>();
         weatherCodes.put(100, "Clear");
         weatherCodes.put(200, "Partial Clouds");
@@ -142,7 +142,7 @@ public class StationAnalytics {
         weatherCodes.put(800, "Thunder");
         return weatherCodes.get(code);
     }
-    */
+
 
     public static String getBeaufortScale(List<Reading> readings) {
         if (readings.size() > 0) {

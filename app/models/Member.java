@@ -10,10 +10,10 @@ import java.util.List;
 
 @Entity
 public class Member extends Model {
-    public String firstname;
-    public String lastname;
-    public String email;
-    public String password;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Station> stations = new ArrayList<Station>();
@@ -33,7 +33,36 @@ public class Member extends Model {
         return this.password.equals(password);
     }
 
-    public void getFirstName(String firstname) {
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

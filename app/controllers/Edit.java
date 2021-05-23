@@ -18,9 +18,17 @@ public class Edit extends Controller {
         render("edit.html");
     }
 
-    public static void editMember(Long id, String firstname, String lastname, String email, String password) {
-        Member member = Accounts.getLoggedInMember();
-        member.save();
+    public static void editMember(String firstname, String lastname, String email, String password) {
+        Member member = null;
+        if (session.contains("logged_in_Memberid")) {
+            String memberId = session.get("logged_in_Memberid");
+            member = Member.findById(Long.parseLong(memberId));
+            member.setFirstname(firstname);
+            member.setLastname(lastname);
+            member.setPassword(password);
+            member.setEmail(email);
+            member.save();
+        }
         redirect("/dashboard");
     }
 }
